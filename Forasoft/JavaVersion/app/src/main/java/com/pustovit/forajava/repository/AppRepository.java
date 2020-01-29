@@ -70,7 +70,6 @@ public class AppRepository {
      * @param limit       The number of search results you want the iTunes Store to return. 1 to 200
      */
     public void searchSettinsForAlbum(String term, String countryCode, int limit) {
-        albumsQueryMap = new HashMap<>();
         albumsQueryMap.put("term", term);
         albumsQueryMap.put("country", countryCode);
         albumsQueryMap.put("limit", String.valueOf(limit));
