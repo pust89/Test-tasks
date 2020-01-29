@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Pustovit</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="search">Search</string>
+    <string name="album_s_cover">Album\'s cover</string>
+    <string name="album_only"> Album Only</string>
+    <string name="song_price">$ %s</string>
+    <string name="title_activity_full_album">FullAlbumActivity</string>
+    <string name="title_activity_album">AlbumActivity</string>
+</resources>

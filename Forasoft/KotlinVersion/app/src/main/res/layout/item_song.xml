@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="song"
+            type="com.pustovit.kotlinversion.repository.model.Song" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/tvNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(song.trackNumber)}"
+            app:layout_constraintBottom_toBottomOf="@+id/tvArtistName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvSongName" />
+
+        <TextView
+            android:id="@+id/tvSongName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@{song.trackName}"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/tvTrackTime"
+            app:layout_constraintStart_toEndOf="@+id/tvNumber"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Song name" />
+
+        <TextView
+            android:id="@+id/tvArtistName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{song.artistName}"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="@+id/tvSongName"
+            app:layout_constraintStart_toStartOf="@+id/tvSongName"
+            app:layout_constraintTop_toBottomOf="@+id/tvSongName" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTrackTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTrackTime"
+            app:songPrice="@{song.trackPrice}"
+            tools:text="200" />
+
+        <TextView
+            android:id="@+id/tvTrackTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvArtistName"
+            app:layout_constraintEnd_toStartOf="@+id/tvPrice"
+            app:layout_constraintTop_toTopOf="@+id/tvSongName"
+            app:trackTime="@{song.trackTimeMillis}"
+            tools:text="20:30" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
